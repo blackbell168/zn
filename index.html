@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>导航主页</title>
+  <style>
+    :root {
+      /* 背景图：可替换为本地路径或任意图片链接 */
+      --bg-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1920&q=80');
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --card-bg-hover: rgba(255, 255, 255, 0.96);
+      --text-primary: #1e293b;
+      --text-secondary: #475569;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 12px 40px rgba(37, 99, 235, 0.18);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      font-size: 22px;
+      line-height: 1.6;
+      background: var(--bg-image) no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-primary);
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    /* 明亮叠加层，保证文字清晰不刺眼 */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(248, 250, 252, 0.75), rgba(235, 245, 255, 0.85));
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 1.8rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+      filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.2));
+    }
+
+    .info-box {
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2.2rem;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      transition: transform 0.3s ease;
+    }
+    .info-box:hover { transform: translateY(-2px); }
+
+    .info-box h2 {
+      font-size:3rem;
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+    }
+
+    .info-box p {
+      font-size: 2rem;
+      color: #334155;
+      line-height: 1.75;
+    }
+
+    .info-box a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.2s;
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(37, 99, 235, 0.08);
+    }
+    .info-box a:hover { 
+      color: var(--accent-hover); 
+      background: rgba(37, 99, 235, 0.15);
+      text-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .link-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1.4rem 1.6rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: #0f172a;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .link-card:hover {
+      background: var(--card-bg-hover);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      color: var(--accent);
+      border-color: rgba(59, 130, 246, 0.35);
+    }
+
+    .link-card .icon { font-size: 1.8rem; flex-shrink: 0; }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #475569;
+      font-size: 1.5rem;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; padding: 1.5rem 0.8rem; }
+      header h1 { font-size: 2rem; }
+      .info-box { padding: 1.5rem; }
+      .links-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🌐 导航主页</h1>
+    </header>
+
+    <section class="info-box">
+      <h2>📱 专业苹果手机监管机解锁</h2>
+      <p>专注解锁、监管机配置机，查询到的都可以解，首次可先解后付。<br>
+         详情联系飞机 <a href="https://t.me/pojielive" target="_blank" rel="noopener">@pojielive</a>，
+         如无法私聊请添加机器人 <a href="https://t.me/pojielive_bot" target="_blank" rel="noopener">@pojielive_bot</a>
+      </p>
+    </section>
+
+    <nav class="links-grid">
+      <a href="http://xx88.ccwu.cc/" class="link-card" target="_blank" rel="noopener">
+        <span class="icon">📊</span>
+        <span>序列号查询网站</span>
+      </a>
+      <a href="https://www.joinquant.com" class="link-card" target="_blank" rel="noopener">
+        <span class="icon">💻</span>
+        <span>聚宽回测平台</span>
+      </a>
+      <a href="https://docs.python.org" class="link-card" target="_blank" rel="noopener">
+        <span class="icon">🐍</span>
+        <span>Python 官方文档</span>
+      </a>
+      <a href="https://quant.stackexchange.com" class="link-card" target="_blank" rel="noopener">
+        <span class="icon">🌐</span>
+        <span>Quant 社区</span>
+      </a>
+      <a href="https://github.com" class="link-card" target="_blank" rel="noopener">
+        <span class="icon">📦</span>
+        <span>GitHub 代码库</span>
+      </a>
+    </nav>
+
+    <footer>联系飞机 <a href="https://t.me/pojielive" target="_blank" rel="noopener">@pojielive</a>，
+         如无法私聊请添加机器人 <a href="https://t.me/pojielive_bot" target="_blank" rel="noopener">@pojielive_bot</a>
+</footer>
+  </main>
+</body>
+</html>
